@@ -12,10 +12,17 @@ class MyChildComponent extends React.Component {
         })
     }
 
+    handleDelete = (item) => {
+        this.props.deleteJob(item);
+    }
+
     render() {
         const { arrJobs } = this.props;
         let a = arrJobs.map((item) => (
-            <p key={item.id}>{item.job} - {item.salary}</p>
+            <p key={item.id}>
+                {item.job} - {item.salary} $
+                <button onClick={() => { this.handleDelete(item) }}>X</button>
+            </p>
         ))
         return (
             <div>
