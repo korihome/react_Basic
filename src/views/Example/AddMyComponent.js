@@ -18,14 +18,13 @@ class AddMyComponent extends React.Component {
         })
     }
 
-    clickMe = (event, props) => {
+    clickMe = (event) => {
         event.preventDefault()
 
         if (!this.state.nameJob || !this.state.salary) {
             alert("Missing require params")
             return;
         }
-        console.log(JSON.stringify(this.state))
 
         this.props.addJob({
             id: Math.floor(Math.random() * 1001),

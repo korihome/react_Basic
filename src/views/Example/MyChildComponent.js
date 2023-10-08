@@ -24,6 +24,7 @@ class MyChildComponent extends React.Component {
                 <button onClick={() => { this.handleDelete(item) }}>X</button>
             </p>
         ))
+
         return (
             <div>
                 {
