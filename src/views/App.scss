@@ -21,13 +21,14 @@
         }
         .todoList {
             .add-todo {
+                margin: 10px 0 20px 0;
             }
             .content-todo {
                 p {
                     margin: 5px;
                     padding: 10px;
                     font-size: calc(7px + 2vmin);
-                    border-bottom: 1px solid white;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.663);
                     button {
                         margin-left: 10px;
                         color: white;
@@ -39,7 +40,13 @@
                             border-color: black;
                         }
                     }
+                    &:first-child {
+                        border-top: 1px solid rgba(255, 255, 255, 0.663);
+                    }
                 }
+            }
+            .toastNofi {
+                font-size: calc(3px + 2vmin);
             }
         }
     }

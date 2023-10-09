@@ -17,11 +17,14 @@
   margin: 0;
   font-weight: normal;
 }
+.App .App-header .todoList .add-todo {
+  margin: 10px 0 20px 0;
+}
 .App .App-header .todoList .content-todo p {
   margin: 5px;
   padding: 10px;
   font-size: calc(7px + 2vmin);
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.663);
 }
 .App .App-header .todoList .content-todo p button {
   margin-left: 10px;
@@ -33,6 +36,12 @@
   color: black;
   background-color: rgba(255, 255, 255, 0.5);
   border-color: black;
+}
+.App .App-header .todoList .content-todo p:first-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.663);
+}
+.App .App-header .todoList .toastNofi {
+  font-size: calc(3px + 2vmin);
 }
 
 @media (prefers-reduced-motion: no-preference) {

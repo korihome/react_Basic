@@ -1,4 +1,5 @@
 import React from 'react'
+import { toast } from 'react-toastify';
 
 class AddTodo extends React.Component {
     static index = 0;
@@ -13,18 +14,22 @@ class AddTodo extends React.Component {
         })
     }
 
+    Notification = () => {
+
+    }
+
     handleComfirm = () => {
         let todoItem = {
             id: Math.floor(Math.random() * 1001),
             title: this.state.title
         }
         if (!this.state.title) {
-            alert("Missing requier params!")
+            toast.error(<div className='toastNofi'>Missing title's Todo!</div>)
             return;
         }
 
+        toast.success(<div className='toastNofi'>Add new Todo complete</div>)
         this.props.addTodo(todoItem)
-
         this.setState({
             title: ''
         })
