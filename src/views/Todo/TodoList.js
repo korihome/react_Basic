@@ -2,6 +2,7 @@ import React from 'react'
 import AddTodo from './AddTodo';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import HOC from "../HOC/RenderColor";
 
 class TodoList extends React.Component {
     state = {
@@ -48,22 +49,38 @@ class TodoList extends React.Component {
 
     handleSaveTodo = () => {
         let checkSame = false;
-        let crtArrTodo = this.state.arrTodo
+        let crtArrTodo = [...this.state.arrTodo];
 
         if (!this.state.editTodo.title) {
             toast.error(<div className='toastNofi'>Missing title's Todo!</div>)
             return;
         }
 
-        crtArrTodo = crtArrTodo.map((item) => {
-            if (item.title === this.state.editTodo.title) {
-                checkSame = true
-            }
-            if (item.id === this.state.editTodo.id) {
-                item.title = this.state.editTodo.title;
-            }
-            return item
+        let index = crtArrTodo.findIndex((item) => {
+            return item.id === this.state.editTodo.id;
         })
+
+        console.log(index);
+
+        // W1
+        if (crtArrTodo[index].title === this.state.editTodo.title) {
+            checkSame = true;
+        }
+        else {
+            crtArrTodo[index].title = this.state.editTodo.title;
+        }
+
+        // W2
+        // crtArrTodo = crtArrTodo.map((item) => {
+        //     if (item.id === this.state.editTodo.id) {
+        //         if (item.title === this.state.editTodo.title) {
+        //             checkSame = true
+        //         }
+        //         else
+        //             item.title = this.state.editTodo.title; 
+        //     }
+        //     return item
+        // })
 
         this.setState({
             editTodo: {}
@@ -82,9 +99,11 @@ class TodoList extends React.Component {
         let isEmpty = Object.keys(this.state.editTodo).length === 0
         return (
             <div className='todoList'>
+                <h3>
+                    Simple ToDoList by React JS
+                </h3>
                 <AddTodo
                     addTodo={this.addTodo}
-                    IDitemEdit={this.a}
                 />
 
                 <div className='content-todo'>
@@ -126,4 +145,4 @@ class TodoList extends React.Component {
     }
 }
 
-export default TodoList;
+export default HOC(TodoList)

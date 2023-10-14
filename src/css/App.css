@@ -1,13 +1,11 @@
 .App {
+  height: 100%;
   text-align: center;
   background-color: #282c34;
 }
 .App .App-header {
-  min-height: 100vh;
   font-size: calc(10px + 2vmin);
   color: white;
-  width: 40%;
-  margin: 0 auto;
 }
 .App .App-header .App-logo {
   height: 15vmin;
@@ -16,6 +14,10 @@
 .App .App-header h3 {
   margin: 0;
   font-weight: normal;
+}
+.App .App-header .todoList {
+  width: 40%;
+  margin: 0 auto;
 }
 .App .App-header .todoList .add-todo {
   margin: 10px 0 20px 0;
@@ -42,6 +44,10 @@
 }
 .App .App-header .todoList .toastNofi {
   font-size: calc(3px + 2vmin);
+}
+
+#root {
+  height: 100vh;
 }
 
 @media (prefers-reduced-motion: no-preference) {
