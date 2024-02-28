@@ -56,13 +56,11 @@ class TodoList extends React.Component {
             return;
         }
 
+        // W1
         let index = crtArrTodo.findIndex((item) => {
             return item.id === this.state.editTodo.id;
         })
 
-        console.log(index);
-
-        // W1
         if (crtArrTodo[index].title === this.state.editTodo.title) {
             checkSame = true;
         }
@@ -102,9 +100,7 @@ class TodoList extends React.Component {
                 <h3>
                     Simple ToDoList by React JS
                 </h3>
-                <AddTodo
-                    addTodo={this.addTodo}
-                />
+                <AddTodo addTodo={this.addTodo} />
 
                 <div className='content-todo'>
                     {this.state.arrTodo.map((item, index) => {

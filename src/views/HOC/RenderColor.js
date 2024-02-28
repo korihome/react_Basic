@@ -6,7 +6,6 @@ const RandomColor = () => {
 
 const HOC = (WrappedComponent) => {
     const colorHexa = "#" + RandomColor();
-    console.log(colorHexa)
     return (props) => (
         <div style={{ color: colorHexa }}>
             <WrappedComponent {...props} />

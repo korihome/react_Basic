@@ -2,7 +2,6 @@ import React from 'react'
 import { toast } from 'react-toastify';
 
 class AddTodo extends React.Component {
-    static index = 0;
 
     state = {
         title: ''
@@ -19,13 +18,14 @@ class AddTodo extends React.Component {
     }
 
     handleComfirm = () => {
-        let todoItem = {
-            id: Math.floor(Math.random() * 1001),
-            title: this.state.title
-        }
         if (!this.state.title) {
             toast.error(<div className='toastNofi'>Missing title's Todo!</div>)
             return;
+        }
+
+        let todoItem = {
+            id: Math.floor(Math.random() * 1001),
+            title: this.state.title
         }
 
         toast.success(<div className='toastNofi'>Add new Todo complete</div>)
@@ -40,7 +40,7 @@ class AddTodo extends React.Component {
             <div>
                 <div className='add-todo'>
                     <input value={this.state.title} type='text' onChange={(event) => { this.handleTodo(event) }} />
-                    <button onClick={() => { this.handleComfirm() }}>add</button>
+                    <button onClick={() => { this.handleComfirm() }}>Add</button>
                 </div>
             </div>
         )

@@ -1,14 +1,18 @@
-import './App.scss';
+import React from 'react';
+import './App.css';
 import logo from './logo.svg';
 import MyComponents from './Example/MyComponents';
 import TodoList from './Todo/TodoList';
 import Nav from './Nav/Nav';
 import Home from './Home/Home';
+import ListUsers from './User/ListUsers';
+import DetailUser from './User/DetailUser';
+import NotFound from './NotFound/NotFound';
+
 import {
     BrowserRouter,
-    Routes,
     Route,
-    Navigate
+    Switch
 } from 'react-router-dom';
 
 function App() {
@@ -18,15 +22,26 @@ function App() {
                 <header className="App-header">
                     <Nav />
                     <img src={logo} className="App-logo" alt="logo" />
-                    <Routes>
-                        <Route path="/" element={<Home />} />
-                        <Route path="/todo" element={<TodoList />} />
-                        <Route path="/about" element={<MyComponents />} />
-                        <Route
-                            path="*"
-                            element={<Navigate to="/" replace />}
-                        />
-                    </Routes>
+                    <Switch>
+                        <Route exact path="/">
+                            <Home />
+                        </Route>
+                        <Route path="/todo">
+                            <TodoList />
+                        </Route>
+                        <Route path="/about">
+                            <MyComponents />
+                        </Route>
+                        <Route exact path="/user">
+                            <ListUsers />
+                        </Route>
+                        <Route path="/user/:id">
+                            <DetailUser />
+                        </Route>
+                        <Route path="*">
+                            <NotFound />
+                        </Route>
+                    </Switch>
                 </header>
             </div>
         </BrowserRouter>

@@ -1,0 +1,100 @@
+.App {
+    height: 100%;
+    text-align: center;
+    background-color: #282c34;
+}
+
+.App-header {
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.App-logo {
+    height: 15vmin;
+    pointer-events: none;
+}
+
+h3 {
+    margin: 0;
+    font-weight: normal;
+}
+
+.todoList {
+    width: 40%;
+    margin: 0 auto;
+}
+
+.add-todo {
+    margin: 10px 0 20px 0;
+}
+
+
+p {
+    margin: 5px;
+    padding: 10px;
+    font-size: calc(7px + 2vmin);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.663);
+}
+
+button {
+    margin-left: 10px;
+    color: white;
+    border: 0.5px solid white;
+    background-color: transparent;
+}
+
+button:hover {
+    color: black;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-color: black;
+}
+
+.toastNofi {
+    font-size: calc(3px + 2vmin);
+}
+
+.list-user-container {
+    width: 30%;
+    margin: 0 auto;
+}
+
+
+.child {
+    padding: 5px;
+    border: 1px solid white;
+}
+
+.child:hover {
+    cursor: pointer;
+    background-color: #ddd;
+    color: black;
+}
+
+#root {
+    height: 100vh;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
+}
+
+.App-link {
+    color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+img {
+    width: 50%;
+
+}

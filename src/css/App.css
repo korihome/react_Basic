@@ -45,6 +45,14 @@
 .App .App-header .todoList .toastNofi {
   font-size: calc(3px + 2vmin);
 }
+.App .App-header .list-user-container {
+  width: 40%;
+  margin: 0 auto;
+}
+.App .App-header .list-user-container .list-user-content .child {
+  padding: 5px;
+  border: 1px solid white;
+}
 
 #root {
   height: 100vh;
